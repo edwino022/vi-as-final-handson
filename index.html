@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edwin's Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #1a1a1a;
+      padding: 1rem 2rem;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #ff6347;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      background: white;
+      height: 3px;
+      width: 25px;
+      margin: 4px 0;
+    }
+
+    .menu-mobile {
+      display: none;
+      flex-direction: column;
+      background: #1a1a1a;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+    }
+
+    .menu-mobile a {
+      padding: 10px;
+      border-bottom: 1px solid #333;
+      text-align: center;
+    }
+
+    section {
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    #hero {
+      background: linear-gradient(to bottom, #ff7e5f, #feb47b, #ff7e5f,#feb47b);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 100px 20px;
+      text-align: left;
+    }
+
+    #hero h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    #hero p {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    .hero-img {
+      width: 350px;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .button {
+      display: inline-block;
+      background: white;
+      color: #ff6347;
+      padding: 10px 20px;
+      margin: 10px 5px;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 25px;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    .button:hover {
+      background: #ff6347;
+      color: white;
+    }
+
+    #about {
+      background: #f9f9f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #about div {
+      max-width: 800px;
+      text-align: center;
+    }
+
+    #skills {
+      background: #fff;
+      text-align: left;
+      padding: 60px 100px;
+    }
+
+    #skills h2 {
+      margin-bottom: 20px;
+    }
+
+    #skills ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #skills ul li {
+      margin: 10px 0;
+      font-size: 1.2rem;
+    }
+
+    #contact {
+      background: #1a1a1a;
+      color: white;
+      padding: 60px 20px;
+    }
+
+    #contact a {
+      color: #ff6347;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .menu {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .menu-mobile.active {
+        display: flex;
+      }
+
+      #hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      #skills {
+        text-align: center;
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="#hero">Portfolio</a>
+    </div>
+    <div class="menu">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu-mobile" id="menu-mobile">
+      <a href="#hero">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="hero">
+    <div>
+      <h1>Welcome to My Portfolio</h1>
+      <p>Transforming ideas into reality with creativity and code.</p>
+      <a href="#about" class="button">About Me</a>
+      <a href="#contact" class="button">Get in Touch</a>
+    </div>
+    <img src="IMG_20240422_003138_761.jpg" alt="Edwin's Photo" class="hero-img">
+  </section>
+
+  <!-- About Me Section -->
+  <section id="about">
+    <div>
+      <h2>About Me</h2>
+      <p>Hello! I'm Edwin, a web designer and developer passionate about crafting user-friendly websites and applications.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <h2>Skills & Work Experience</h2>
+    <ul>
+      <li>🌐 Web Design</li>
+      <li>💻 HTML, CSS, JavaScript</li>
+      <li>🎨 UI/UX Design</li>
+      <li>📱 Responsive Web Development</li>
+    </ul>
+    <p>Future Aspiration: Becoming a full-stack web developer.</p>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <p>Email: edwinpogi123@gmail.com</p>
+    <p>Phone: +63 912 345 6789</p>
+    <p>Social: <a href="https://www.facebook.com/Yohmonken/">Facebook</a> | <a href="#">OnlyFans</a></p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Edwin's Portfolio. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // JavaScript for Hamburger Menu
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('menu-mobile')
